@@ -69,27 +69,17 @@ func EditaTransaction(c *gin.Context) {
 
 //corrigir regra de negocio
 
-func Transaction(DB *gorm.DB, customer *models.Customer) (n models.Transaction) {
-	fmt.Println(customer, "Seja benvindo ao Bank")
-	var account1 models.Account
-	var trans1 models.Transaction
-	var customer1 models.Customer
-	trans1.FkAccountId = customer1.CustomerId
 
-	switch customer1.Check {
-	case 1:
-		trans1.RunningBalance = account1.CurrentBalance - customer1.FkCurrentBalance
-		trans1.DebitedAmount = customer1.FkCurrentBalance
-	case 2:
-		trans1.RunningBalance = account1.CurrentBalance + customer1.FkCurrentBalance
-		trans1.CreditedAmount = customer1.FkCurrentBalance
-	}
-	if trans1.RunningBalance < 0 {
-		fmt.Println("Balance too low for transaction")
-		return trans1
-	}
-	trans1.OtherPartyAccountNumber = customer1.FkCurrentBalance
-	fmt.Println(trans1)
 
-	return
-}
+func Deposit(c *Account) (depositValue float64, destinationAccount int64 ) string{
+	if depositValue > 0 {
+	CurrentBalance += depositValue 
+	return "Depósito realizado com sucesso"
+} else {
+	return "Depósito não realizado! Verifique os dados digitados!
+  }
+
+
+
+
+

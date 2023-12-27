@@ -11,5 +11,5 @@ type Account struct {
 	AccountNumber  int64  `json:"account_number" sql:"account_number, type:numeric UNIQUE NOT NULL"`
 	IsActive       bool   `json:"is_active" sql:"is_active, type:boolean"`
 	AccountType    string `json:"account_type" sql:"account_type, type:text NOT NULL"`
-	CurrentBalance int    `json:"current_balance" sql:"current_balance, type:numeric(10,2) NOT NULL"`
+	CurrentBalance int    `json:"current_balance" sql:"current_balance, type:numeric(15,2) NOT NULL"`
 }
